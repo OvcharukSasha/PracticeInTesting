@@ -1,106 +1,129 @@
 package DTOs;
 
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
-@XmlRootElement
 
+@Builder
+@Data
 public class DTORandomUser {
-    public List<Result> results;
-    public Info info;
+    private List<Result> results;
 
+    private Info info;
 
+    @Getter
+    @Setter
 
     public class Result {
 
-        public String gender;
-        public Name name;
-        public Location location;
-        public String email;
-        public Login login;
-        public Dob dob;
-        public Registered registered;
-        public String phone;
-        public String cell;
-        public Id id;
-        public Picture picture;
-        public String nat;
+        private String gender;
+        private Name name;
+        private Location location;
+        private String email;
+        private Login login;
+        private Dob dob;
+        private Registered registered;
+        private String phone;
+        private String cell;
+        private Id id;
+        private Picture picture;
+        private String nat;
     }
 
+    @Getter
+    @Setter
     public class Name {
 
-        public String title;
-        public String first;
-        public String last;
+        private String title;
+        private String first;
+        private String last;
     }
 
+    @Getter
+    @Setter
+    @Builder
     public class Location {
 
-        public String street;
-        public String city;
-        public String state;
-        public String postcode;
-        public Coordinates coordinates;
-        public Timezone timezone;
+        private String street;
+        private String city;
+        private String state;
+        private String postcode;
+        private Coordinates coordinates;
+        private Timezone timezone;
     }
 
+    @Getter
+    @Setter
     public class Login {
 
-        public String uuid;
-        public String username;
-        public String password;
-        public String salt;
-        public String md5;
-        public String sha1;
-        public String sha256;
+        private String uuid;
+        private String username;
+        private String password;
+        private String salt;
+        private String md5;
+        private String sha1;
+        private String sha256;
     }
 
+    @Getter
+    @Setter
     public class Dob {
 
-        public String date;
-        public Integer age;
+        private String date;
+        private Integer age;
     }
 
+    @Getter
+    @Setter
     public class Registered {
 
-        public String date;
-        public Integer age;
+        private String date;
+        private Integer age;
     }
 
+    @Getter
+    @Setter
     public class Id {
 
-        public String name;
-        public Object value;
+        private String name;
+        private String value;
     }
 
+    @Getter
+    @Setter
     public class Picture {
 
-        public String large;
-        public String medium;
-        public String thumbnail;
+        private String large;
+        private String medium;
+        private String thumbnail;
     }
 
-
+    @Getter
+    @Setter
     public class Timezone {
 
-        public String offset;
-        public String description;
+        private String offset;
+        private String description;
     }
 
+    @Getter
+    @Setter
     public class Info {
 
-        public String seed;
-        public Integer results;
-        public Integer page;
-        public String version;
+        private String seed;
+        private Integer results;
+        private Integer page;
+        private String version;
     }
 
+    @Getter
+    @Setter
     public class Coordinates {
 
-        public String latitude;
-        public String longitude;
+        private String latitude;
+        private String longitude;
     }
 }

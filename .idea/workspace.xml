@@ -2,17 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ec41d01-6dc7-4266-ab98-8af278796bcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DTOs/DTORandomUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTOs/DTORandomUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/restClients/RandomUserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/restClients/RandomUserClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/steps/api/RandomUserSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/api/RandomUserSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/randomUserTests/randomUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/randomUserTests/randomUserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Coordinates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Dob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Id.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Info.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Name.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Registered.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser$Timezone.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DTOs/DTORandomUser.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/restClients/RandomUserClient.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/steps/api/RandomUserSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/randomUserTests/randomUserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/randomUserTests/randomUserTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +31,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PracticeInTesting" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,7 +105,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566562861188</updated>
-      <workItem from="1566562863857" duration="11077000" />
+      <workItem from="1566562863857" duration="11806000" />
+      <workItem from="1566895396032" duration="2030000" />
+      <workItem from="1566990176915" duration="1520000" />
     </task>
     <servers />
   </component>
@@ -105,7 +119,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -121,7 +137,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/restClients/RandomUserClient.java</url>
-          <line>15</line>
+          <line>14</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

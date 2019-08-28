@@ -14,7 +14,7 @@ public class RandomUserClient {
     public List<DTORandomUser.Result> getMultipleUsers(int usersAmount) {
         Response response = given().queryParam(NUMBER_PARAMETER, usersAmount).get(GET_USER_REQUEST);
         DTORandomUser randomUsersDTO = new Gson().fromJson(response.asString(), DTORandomUser.class);
-        List<DTORandomUser.Result> results = randomUsersDTO.results;
+        List<DTORandomUser.Result> results = randomUsersDTO.getResults();
 
         return results;
     }

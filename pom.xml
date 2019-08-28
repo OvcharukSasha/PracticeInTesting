@@ -43,6 +43,11 @@
             <version>4.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>de.lars-sh</groupId>
+            <artifactId>lombok-annotations</artifactId>
+            <version>1.18.8</version>
+        </dependency>
 
     </dependencies>
 </project>
