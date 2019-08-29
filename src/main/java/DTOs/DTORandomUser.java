@@ -1,22 +1,15 @@
 package DTOs;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
-@Builder
-@Data
 public class DTORandomUser {
     private List<Result> results;
-
     private Info info;
 
-    @Getter
-    @Setter
-
+    public List<Result> getResults(){
+        return results;
+    }
     public class Result {
 
         private String gender;
@@ -31,10 +24,13 @@ public class DTORandomUser {
         private Id id;
         private Picture picture;
         private String nat;
+
+        public String getGender(){
+            return gender;
+        }
     }
 
-    @Getter
-    @Setter
+
     public class Name {
 
         private String title;
@@ -42,9 +38,8 @@ public class DTORandomUser {
         private String last;
     }
 
-    @Getter
-    @Setter
-    @Builder
+
+
     public class Location {
 
         private String street;
@@ -55,8 +50,7 @@ public class DTORandomUser {
         private Timezone timezone;
     }
 
-    @Getter
-    @Setter
+
     public class Login {
 
         private String uuid;
@@ -68,32 +62,28 @@ public class DTORandomUser {
         private String sha256;
     }
 
-    @Getter
-    @Setter
+
     public class Dob {
 
         private String date;
         private Integer age;
     }
 
-    @Getter
-    @Setter
+
     public class Registered {
 
         private String date;
         private Integer age;
     }
 
-    @Getter
-    @Setter
+
     public class Id {
 
         private String name;
         private String value;
     }
 
-    @Getter
-    @Setter
+
     public class Picture {
 
         private String large;
@@ -101,16 +91,14 @@ public class DTORandomUser {
         private String thumbnail;
     }
 
-    @Getter
-    @Setter
+
     public class Timezone {
 
         private String offset;
         private String description;
     }
 
-    @Getter
-    @Setter
+
     public class Info {
 
         private String seed;
@@ -119,8 +107,7 @@ public class DTORandomUser {
         private String version;
     }
 
-    @Getter
-    @Setter
+
     public class Coordinates {
 
         private String latitude;
