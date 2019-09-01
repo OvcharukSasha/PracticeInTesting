@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite1" verbose="1" >
+    <parameter name="amount"  value="100"/>
+    <test name="Test1" >
+        <packages>
+            <package name="randomUserTests" />
+        </packages>
+    </test>
+
+</suite>
+
