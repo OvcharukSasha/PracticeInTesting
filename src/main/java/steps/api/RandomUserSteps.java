@@ -3,7 +3,6 @@ import DTOs.DTORandomUser;
 import restClients.RandomUserClient;
 import java.util.List;
 
-
 public class RandomUserSteps {
 
     private RandomUserClient randomUserClient = new RandomUserClient();

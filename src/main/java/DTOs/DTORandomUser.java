@@ -1,6 +1,5 @@
 package DTOs;
 
-
 import java.util.List;
 
 public class DTORandomUser {

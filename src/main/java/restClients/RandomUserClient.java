@@ -4,8 +4,6 @@ import DTOs.DTORandomUser;
 import com.google.gson.Gson;
 import  static helpers.RandomUserAPIHelper.sendGetMultipleUsersWithParams;
 import io.restassured.response.Response;
-
-
 import java.util.List;
 
 public class RandomUserClient {
@@ -18,5 +16,4 @@ public class RandomUserClient {
     public DTORandomUser getDTORandomUserFromResponse(Response response){
         return new Gson().fromJson(response.asString(), DTORandomUser.class);
     }
-
 }
