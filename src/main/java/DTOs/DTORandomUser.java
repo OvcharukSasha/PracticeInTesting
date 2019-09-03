@@ -27,6 +27,9 @@ public class DTORandomUser {
         public String getGender(){
             return gender;
         }
+        public String getName(){
+            return name.toString();
+        }
     }
 
 
@@ -35,6 +38,12 @@ public class DTORandomUser {
         private String title;
         private String first;
         private String last;
+
+        @Override
+        public String toString(){
+            return title+" "+first+" "+last;
+
+        }
     }
 
 

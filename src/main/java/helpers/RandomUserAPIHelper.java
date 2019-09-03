@@ -11,4 +11,8 @@ public class RandomUserAPIHelper {
     public static Response sendGetMultipleUsersWithParams(int usersAmount) {
         return given().queryParam(NUMBER_PARAMETER, usersAmount).get(GET_USER_REQUEST);
     }
+
+    public static Response sendGetUser() {
+        return given().get(GET_USER_REQUEST);
+    }
 }

@@ -3,6 +3,8 @@ package restClients;
 import DTOs.DTORandomUser;
 import com.google.gson.Gson;
 import  static helpers.RandomUserAPIHelper.sendGetMultipleUsersWithParams;
+import static helpers.RandomUserAPIHelper.sendGetUser;
+
 import io.restassured.response.Response;
 import java.util.List;
 
@@ -15,5 +17,10 @@ public class RandomUserClient {
 
     public DTORandomUser getDTORandomUserFromResponse(Response response){
         return new Gson().fromJson(response.asString(), DTORandomUser.class);
+    }
+
+    public DTORandomUser.Result getUser() {
+        Response response = sendGetUser();
+        return getDTORandomUserFromResponse(response).getResults().get(0);
     }
 }

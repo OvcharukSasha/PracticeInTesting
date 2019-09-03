@@ -17,4 +17,8 @@ public class RandomUserSteps {
                                 .filter(e -> e.getGender().equalsIgnoreCase(gender))
                                 .count();
     }
+
+    public DTORandomUser.Result getRandomUser() {
+        return randomUserClient.getUser();
+    }
 }
