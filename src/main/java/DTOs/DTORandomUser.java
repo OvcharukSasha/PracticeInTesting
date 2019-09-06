@@ -41,7 +41,7 @@ public class DTORandomUser {
 
         @Override
         public String toString(){
-            return title+" "+first+" "+last;
+            return first+last;
 
         }
     }
