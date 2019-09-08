@@ -26,12 +26,6 @@ public class GoogleResultsPage {
         wait = new WebDriverWait(driver, 20);
     }
 
-
-    public String getURL() {
-        return driver.getCurrentUrl();
-    }
-
-
     public void waitResultPageLoad() {
         wait.until(ExpectedConditions.visibilityOf(resultStatus));
     }
@@ -39,7 +33,4 @@ public class GoogleResultsPage {
     public List<WebElement> getLinksOnPage(){
         return links;
     }
-
-
-
 }

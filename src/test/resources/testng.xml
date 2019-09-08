@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Suite1" verbose="1" >
-    <parameter name="amount"  value="100"/>
-    <test name="Test1" >
-        <packages>
-            <package name="randomUserTests" />
-        </packages>
+<suite name="RandomUserTests" verbose="1">
+    <test name="AmountOfGendersTest">
+        <parameter name="amount" value="100"/>
+        <classes>
+            <class name="randomUserTests.RandomUserAPITest"/>
+        </classes>
     </test>
-
+    <test name="checkUserInFacebook">
+        <classes>
+            <class name="randomUserTests.RandomUserUITest"/>
+        </classes>
+    </test>
 </suite>
 

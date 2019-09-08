@@ -1,45 +1,48 @@
 package steps.common;
 
-import DTOs.DTORandomUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.GoogleResultsPage;
 import pages.GoogleSearchPage;
-import steps.api.RandomUserSteps;
-
 import java.util.List;
+import java.util.logging.Logger;
 
 public class UICommonSteps {
     private GoogleSearchPage googleSearchPage;
     private GoogleResultsPage googleResultsPage;
-    private static RandomUserSteps randomUserSteps=new RandomUserSteps();
-    public boolean checkForUserInFacebook(WebDriver driver) {
+    private static Logger log = Logger.getLogger(UICommonSteps.class.getName());
+
+    public boolean checkForUserInFacebook(WebDriver driver, String name) {
         initializeGoogleSearchPage(driver);
-       DTORandomUser.Result randomUser= randomUserSteps.getRandomUser();
-       searchForUser(randomUser.getName());
-googleResultsPage=new GoogleResultsPage(driver);
-googleResultsPage.waitResultPageLoad();
-        List<WebElement> links= googleResultsPage.getLinksOnPage();
-        boolean res=false;
-        for (WebElement we:links) {
-            if (we.getText().contains("facebook.com")) {
-                res = true;
-                return res;
+        searchForUser(name);
+        initializeGoogleResultsPage(driver);
+        return areLinksToFacebook();
+    }
 
-            }
-
-        }
-        return res;
+    private Boolean areLinksToFacebook() {
+        List<WebElement> links = googleResultsPage.getLinksOnPage();
+        return links.stream().anyMatch(n -> n.getText().contains("www.facebook.com"));
     }
 
     private void searchForUser(String name){
-        googleSearchPage.waitGooglePageLoad();
+        log.info(String.format("Searching for user \"%s\"...",name));
+
         googleSearchPage.setTextToGoogleSearchInput(name);
         googleSearchPage.googleSearchButtonClick();
-
     }
+
     private void initializeGoogleSearchPage(WebDriver driver) {
+        log.info("Initialising Google search page...");
+
         googleSearchPage =new GoogleSearchPage(driver);
         googleSearchPage.openGoogleSearchPage();
+        googleSearchPage.waitGooglePageLoad();
+    }
+
+    private void initializeGoogleResultsPage(WebDriver driver) {
+        log.info("Initialising Google results page...");
+
+        googleResultsPage=new GoogleResultsPage(driver);
+        googleResultsPage.waitResultPageLoad();
     }
 }
