@@ -19,7 +19,7 @@ public class GoogleSearchPage {
     @FindBy(xpath = "//input[@class=\"gLFyf gsfi\"]")
     private WebElement searchInput;
 
-    @FindBy(xpath = "//div[@class=\"FPdoLc VlcLAe\"]//input[@name=\"btnK\"]")
+    @FindBy(xpath = "//div[3]/center/input[@name='btnK']")
     private WebElement googleSearchButton;
 
     public GoogleSearchPage(WebDriver driver) {

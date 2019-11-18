@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RandomUserUITests" verbose="1">
+    <test name="checkUserInFacebook">
+        <classes>
+            <class name="randomUserTests.RandomUserUITest"/>
+        </classes>
+    </test>
+</suite>

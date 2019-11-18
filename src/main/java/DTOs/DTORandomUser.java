@@ -50,7 +50,7 @@ public class DTORandomUser {
 
     public class Location {
 
-        private String street;
+        private Street street;
         private String city;
         private String state;
         private String postcode;
@@ -115,6 +115,11 @@ public class DTORandomUser {
         private String version;
     }
 
+    public class Street{
+
+        private Integer number;
+        private String name;
+    }
 
     public class Coordinates {
 
