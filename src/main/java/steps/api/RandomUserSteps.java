@@ -50,7 +50,7 @@ public class RandomUserSteps {
         for (int i = 0; i < usersName.size(); i++) {
             Row row = sheet.createRow(i);
             Cell idCell = row.createCell(0);
-            idCell.setCellValue(i);
+            idCell.setCellValue(i+1);
 
             Cell nameCell = row.createCell(1);
             nameCell.setCellValue(usersName.get(i));
@@ -63,7 +63,7 @@ public class RandomUserSteps {
 
     public String readNameOfRandomUserFromFile(int amount) {
         Random random = new Random();
-        int i = random.nextInt(amount + 1);
+        int i = random.nextInt(100) + 1;
         return readUserNameById(i);
     }
 
