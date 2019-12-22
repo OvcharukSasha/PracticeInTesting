@@ -8,27 +8,30 @@ import steps.api.RandomUserSteps;
 import steps.common.UICommonSteps;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class CheckRandomUserFromFileTest {
     private RandomUserSteps randomUserSteps;
     private UICommonSteps uiCommonSteps;
     private WebDriver driver;
+    private static Logger log = Logger.getLogger(CheckRandomUserFromFileTest.class.getName());
+    private static final String CHROMEDRIVER_PATH = "src\\main\\java\\chromedriver.exe";
 
     @BeforeSuite
-    @Parameters({"amount"})
-    public void writeUsersDataIntoFile(int amount) {
+    @Parameters({"amountOfUsers"})
+    public void writeUsersDataIntoFile(int amountOfUsers) {
         randomUserSteps = new RandomUserSteps();
-        randomUserSteps.getSetOfUsers(amount);
+        randomUserSteps.getSetOfUsers(amountOfUsers);
         try {
             randomUserSteps.writeUsersIntoFile();
         } catch ( IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     @BeforeTest
     public void SetUp() {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\java\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         uiCommonSteps=new UICommonSteps();
@@ -36,11 +39,14 @@ public class CheckRandomUserFromFileTest {
     }
 
     @Test
-    @Parameters({"amount"})
-    public void searchRandomUserFromFile(int amount){
-        String name = randomUserSteps.readNameOfRandomUserFromFile(amount);
-        Assert.assertTrue(uiCommonSteps.checkForUserInFacebook(driver, name),
-                String.format("There isn't such user \"%s\" in Facebook.", name));
+    @Parameters({"amountOfUsers"})
+    public void searchRandomUserFromFile(int amountOfUsers){
+        String name = randomUserSteps.readNameOfRandomUserFromFile(amountOfUsers);
+        if (!name.equals("EMPTY"))
+            Assert.assertTrue(uiCommonSteps.checkForUserInFacebook(driver, name),
+                    String.format("There isn't such user \"%s\" in Facebook.", name));
+        else
+            log.info("Impossible to search for empty string");
     }
 
     @AfterTest

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="RandomUserFileTests" verbose="1">
-    <parameter name="amount" value="100"/>
+    <parameter name="amountOfUsers" value="100"/>
     <test name="searchRandomUserFromFile">
         <classes>
             <class name="randomUserTests.CheckRandomUserFromFileTest"/>

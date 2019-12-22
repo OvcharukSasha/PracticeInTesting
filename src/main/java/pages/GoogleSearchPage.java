@@ -19,7 +19,7 @@ public class GoogleSearchPage {
     @FindBy(xpath = "//input[@class=\"gLFyf gsfi\"]")
     private WebElement searchInput;
 
-    @FindBy(xpath = "//div[3]/center/input[@name='btnK']")
+    @FindBy(xpath = "//div[contains(@class, 'FPdoLc')]//input[@name='btnK']")
     private WebElement googleSearchButton;
 
     public GoogleSearchPage(WebDriver driver) {
@@ -47,6 +47,6 @@ public class GoogleSearchPage {
                 ExpectedConditions.and(
                         ExpectedConditions.visibilityOf(searchInput),
                         ExpectedConditions.visibilityOf(logoImg))
-                );
+        );
     }
 }
