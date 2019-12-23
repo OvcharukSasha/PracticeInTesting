@@ -30,7 +30,7 @@ public class CheckRandomUserFromFileTest {
     }
 
     @BeforeTest
-    public void SetUp() {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", CHROMEDRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -50,7 +50,7 @@ public class CheckRandomUserFromFileTest {
     }
 
     @AfterTest
-    public void Close() {
+    public void close() {
         driver.close();
     }
 

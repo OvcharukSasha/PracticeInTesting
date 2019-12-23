@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,11 @@ public class GoogleSearchPage {
     @FindBy(xpath = "//div[contains(@class, 'FPdoLc')]//input[@name='btnK']")
     private WebElement googleSearchButton;
 
+    @FindBy(xpath="//div[@class='UUbT9']")
+    private WebElement dropdownMatches;
+
+    private By searchButtonInDropdown=By.cssSelector("div.UUbT9 input.gNO89b");
+
     public GoogleSearchPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
@@ -33,13 +39,18 @@ public class GoogleSearchPage {
     }
 
     public void googleSearchButtonClick() {
-        wait.until(ExpectedConditions.elementToBeClickable(googleSearchButton));
-        this.googleSearchButton.click();
+        if (dropdownMatches.isDisplayed()) {
+            WebElement searchButton = dropdownMatches.findElement(searchButtonInDropdown);
+            wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+            searchButton.click();
+        } else {
+            wait.until(ExpectedConditions.elementToBeClickable(googleSearchButton));
+            this.googleSearchButton.click();
+        }
     }
 
     public void setTextToGoogleSearchInput(String value) {
         searchInput.sendKeys(value);
-        logoImg.click();
     }
 
     public void waitGooglePageLoad() {

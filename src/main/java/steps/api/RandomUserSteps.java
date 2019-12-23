@@ -1,12 +1,7 @@
 package steps.api;
 
 import DTOs.DTORandomUser;
-import net.bytebuddy.implementation.bytecode.Throw;
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import helpers.utils.FileWriterReader;
 import restClients.RandomUserClient;
 
 import java.io.*;
@@ -19,7 +14,7 @@ public class RandomUserSteps {
     private RandomUserClient randomUserClient = new RandomUserClient();
     private List<DTORandomUser.Result> resultsList;
     private static Logger log = Logger.getLogger(RandomUserSteps.class.getName());
-    private static final String NAME_OF_FILE = "target/generated-sources/usersData.xlsx";
+    private FileWriterReader fileWriterReader = new FileWriterReader();
 
     public void getSetOfUsers(int numberOfUsers) {
         log.info(String.format("Getting %d random users...", numberOfUsers));
@@ -46,46 +41,11 @@ public class RandomUserSteps {
     }
 
     public void writeUsersIntoFile() throws IOException {
-        XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Users");
-        List<String> userNames = getUserNames();
-
-        for (int i = 0; i < userNames.size(); i++) {
-            Row row = sheet.createRow(i);
-            Cell idCell = row.createCell(0);
-            idCell.setCellValue(i + 1);
-
-            Cell nameCell = row.createCell(1);
-            nameCell.setCellValue(userNames.get(i));
-        }
-
-        FileOutputStream out = new FileOutputStream(new File(NAME_OF_FILE));
-        workbook.write(out);
-        out.close();
+        fileWriterReader.writeDataIntoFile("Users", getUserNames());
     }
 
     public String readNameOfRandomUserFromFile(int amountOfUsers) {
         int i = new Random().nextInt(amountOfUsers) + 1;
-        return readUserNameById(i);
-    }
-
-    public String readUserNameById(int id) {
-        String name = "";
-        try {
-
-            Workbook myExcelBook = WorkbookFactory.create(new FileInputStream(NAME_OF_FILE));
-            Sheet myExcelSheet = myExcelBook.getSheet("Users");
-            Row row = myExcelSheet.getRow(id);
-
-            if (row.getCell(1).getCellType() == HSSFCell.CELL_TYPE_STRING) {
-                name = row.getCell(1).getStringCellValue();
-                if (name.isEmpty()) name = "EMPTY";
-            }
-            myExcelBook.close();
-
-        } catch (IOException | InvalidFormatException e) {
-            log.severe(String.format("Something went wrong: %s", e.getMessage()));
-        }
-        return name;
+        return fileWriterReader.readPropertyById(i, "Users");
     }
 }
