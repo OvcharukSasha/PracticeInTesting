@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="RandomUserTests" verbose="1">
-    <test name="AmountOfGendersTest">
-        <parameter name="amount" value="100"/>
-        <classes>
-            <class name="randomUserTests.RandomUserAPITest"/>
-        </classes>
-    </test>
-    <test name="checkUserInFacebook">
-        <classes>
-            <class name="randomUserTests.RandomUserUITest"/>
-        </classes>
-    </test>
+<suite name="allSuites">
+    <suite-files>
+        <suite-file path="CheckUserFromFileSuite.xml" />
+        <suite-file path="RandomUserAPISuite.xml" />
+        <suite-file path="RandomUserUISuite.xml" />
+    </suite-files>
 </suite>
 

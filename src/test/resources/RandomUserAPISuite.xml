@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RandomUserAPITests" verbose="1">
+    <test name="AmountOfGendersTest">
+        <parameter name="amountOfUsers" value="100"/>
+        <classes>
+            <class name="randomUserTests.RandomUserAPITest"/>
+        </classes>
+    </test>
+</suite>

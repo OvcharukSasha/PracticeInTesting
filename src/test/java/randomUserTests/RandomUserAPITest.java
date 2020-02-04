@@ -7,11 +7,11 @@ import steps.api.RandomUserSteps;
 public class RandomUserAPITest {
     private RandomUserSteps randomUserSteps;
 
-    @Parameters({"amount"})
+    @Parameters({"amountOfUsers"})
     @Test
-    public void printOutMenAndWomenAmounts(int amount) {
+    public void printOutMenAndWomenAmounts(int amountOfUsers) {
         randomUserSteps = new RandomUserSteps();
-        randomUserSteps.getSetOfUsers(amount);
+        randomUserSteps.getSetOfUsers(amountOfUsers);
         System.out.println(String.format("Amount of women: %d;", randomUserSteps.getGenderAmountFromUsersList("female")));
         System.out.println(String.format("Amount of men: %d;", randomUserSteps.getGenderAmountFromUsersList("male")));
     }

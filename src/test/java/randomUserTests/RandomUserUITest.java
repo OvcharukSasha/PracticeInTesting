@@ -16,7 +16,7 @@ public class RandomUserUITest {
     private WebDriver driver;
 
     @BeforeTest
-    public void SetUp() {
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src\\main\\java\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -32,7 +32,7 @@ public class RandomUserUITest {
     }
 
     @AfterTest
-    public void Close() {
+    public void close() {
         driver.close();
     }
 }
